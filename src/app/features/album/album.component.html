@@ -1,0 +1,43 @@
+<div class="row">
+    <!-- esto es para el titulo/ encabezado-->
+    <div class="col-2">
+        <img class="alb-img" width="75" src="https://www.jotdown.es/wp-content/uploads/2013/07/Queen-II.jpg"
+            alt="queen">
+    </div>
+    <div class="col-10">
+        <div class="row">
+            <p class="year-album">{{albumModel.year}}</p>
+        </div>
+        <div class="row">
+            <p class="name-album">{{albumModel.title}}</p>
+        </div>
+        <div class="row"></div>
+        <div class="row">
+            botones
+        </div>
+    </div>
+</div>
+<div class="row">
+    <!-- tabla-->
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Featuring</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let song of albumModel.songs" (click)="viewSongDetail(song)" >
+                <th scope="row">{{song.num}}</th>
+                <td>{{song.title}}</td>
+                <td>{{song.featuring}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <div class="col-12">
+        <song-detail *ngIf="songDetail" [song]="songDetail"></song-detail>
+    </div>
+</div>

@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "clase-d4-s7"
+  "defaultProject": "clase-d4-s7",
+  "cli": {
+    "analytics": false
+  }
 }
